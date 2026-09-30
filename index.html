@@ -1,90 +1,21 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#151411">
-<meta name="description" content="Anthony's Brisket Command. Low and slow barbecue. Honest field reports.">
-<title>Brisket Command | Smoke. Taste. Report.</title>
-<link rel="preconnect" href="https://lonestargrillz.com">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101315"><title>Big Rigs & BBQ | Brisket Command</title><meta name="description" content="Heavy hauls. Slow smoke. Anthony's Brisket Command — grab a plate and tell us straight.">
 <style>
-:root{color-scheme:dark;--ink:#151411;--cream:#f4ecd9;--muted:#b6ae9f;--copper:#e7a65f;--line:#3b352b}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--cream);background:var(--ink);font:16px/1.6 system-ui,sans-serif}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 85% 12%,#a553181c,transparent 55%);z-index:-1}
-a{color:inherit}.wrap{max-width:1180px;margin:auto;padding:0 28px}
-header{border-bottom:1px solid var(--line)}nav{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:23px 0}
-.brand{display:flex;align-items:center;gap:13px;text-decoration:none;font-size:14px;letter-spacing:.12em;font-weight:900}
-.seal{display:grid;place-items:center;width:45px;height:45px;border:1px solid var(--copper);color:var(--copper);border-radius:50%;font:24px Georgia,serif}
-.nav-note{font-size:11px;letter-spacing:.15em;color:var(--muted)}.nav-link{font-size:13px;color:var(--copper);text-decoration:none;font-weight:700}
-.hero{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:80px 0 65px}
-.eyebrow{display:flex;align-items:center;gap:12px;color:var(--copper);font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
-.eyebrow:before{content:"";width:32px;height:1px;background:var(--copper)}
-h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(62px,7.5vw,104px);letter-spacing:-.055em;line-height:.98;margin:29px 0}
-h1 em{color:var(--copper);font-weight:400}p{color:var(--muted)}.intro{max-width:410px;font-size:17px;line-height:1.8}
-.actions{display:flex;gap:18px;align-items:center;margin:30px 0;flex-wrap:wrap}.button{display:inline-block;text-decoration:none;border:1px solid var(--copper);background:var(--copper);color:#20170e;padding:15px 23px;font-size:13px;font-weight:850;letter-spacing:.03em;border-radius:3px}
-.subtle{font-size:12px;color:var(--muted)}.equipment{position:relative;margin:0;background:#eee9de;border-radius:4px;color:#24221d;padding:35px 22px 22px;box-shadow:20px 20px 0 #241f18}
-.equipment:before{content:"THE PIT";position:absolute;top:18px;left:22px;font-size:10px;letter-spacing:.2em;color:#65594a}
-.equipment img{display:block;width:100%;height:320px;object-fit:contain}
-.equipment figcaption{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-top:18px;padding-top:16px;border-top:1px solid #d2c7b6}
-.equipment strong{font:26px Georgia,serif}.equipment small{font-size:10px;letter-spacing:.12em}.credit{font-size:10px;display:block;color:#746854;margin-top:10px}
-.photo-fallback{padding:60px 20px;text-align:center;font:32px Georgia,serif}
-.ribbon{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:19px 0;color:#c4b49b;font-size:10px;letter-spacing:.18em;font-weight:700}
-.process{display:grid;grid-template-columns:repeat(3,1fr);gap:35px;padding:45px 0 65px}.step{border-left:1px solid var(--line);padding-left:20px}.number{font:italic 23px Georgia,serif;color:var(--copper)}.step h3{font:24px Georgia,serif;margin:10px 0}.step p{font-size:13px;margin:0;max-width:260px}
-.report-heading{display:flex;justify-content:space-between;align-items:end;gap:24px;border-top:1px solid var(--line);padding-top:40px;margin-bottom:28px}.report-heading h2{font:clamp(32px,5vw,48px) Georgia,serif;margin:14px 0 0;letter-spacing:-.03em}.report-heading p{font-size:13px;max-width:300px;margin:0}
-.form-shell{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#14120f}
-iframe{display:block;width:100%;height:2550px;border:0}#live[hidden]{display:none}.waiting{padding:32px;color:var(--muted)}.direct{display:block;text-align:center;font-size:12px;margin:20px 0;color:var(--copper)}
-footer{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:30px 0 40px;border-top:1px solid var(--line);margin-top:45px;color:var(--muted);font-size:11px}.signature{font:italic 22px Georgia,serif;color:var(--cream)}
-[hidden]{display:none!important}:focus-visible{outline:3px solid var(--copper);outline-offset:5px}
-@media(max-width:760px){.wrap{padding:0 20px}.nav-note{display:none}.hero{grid-template-columns:1fr;gap:36px;padding:45px 0}.hero h1{font-size:76px}.equipment{margin-right:12px;box-shadow:12px 12px 0 #241f18}.equipment img{height:270px}.ribbon{flex-wrap:wrap;justify-content:center;font-size:9px}.process{gap:20px;padding:36px 0 45px}.step{padding-left:12px}.step h3{font-size:21px}.report-heading{align-items:start;flex-direction:column;gap:14px}iframe{height:2900px}footer{align-items:start;flex-direction:column}.brand{font-size:11px}}
+:root{color-scheme:dark;--bg:#101315;--panel:#191d20;--text:#f6f0e5;--muted:#b5b6b2;--orange:#f4a153;--line:#ffffff20}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,sans-serif}a{color:inherit}.wrap{width:min(1120px,calc(100% - 48px));margin:auto}.hero{position:relative;min-height:760px;isolation:isolate;display:flex;flex-direction:column;background:#151a1f;overflow:hidden}.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:45% 48%;z-index:-3}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#080c10c9 0%,#080c1085 45%,#080c1020 100%),linear-gradient(0deg,#101315 0%,transparent 40%);z-index:-2}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#080c1055,transparent 30%);z-index:-1}nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:27px 0;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:11px;font-weight:850;letter-spacing:.14em;font-size:12px;text-decoration:none}.star{color:var(--orange);font-size:26px}.nav-link{text-decoration:none;font-size:12px;font-weight:700}.hero-copy{padding:100px 0 85px;max-width:620px}.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:750;color:var(--orange)}h1{font-size:clamp(60px,8vw,105px);line-height:.96;letter-spacing:-.065em;margin:26px 0;font-weight:900}h1 span{color:var(--orange)}.tagline{font:italic 28px Georgia,serif;margin:25px 0 12px}.hero-copy p{max-width:410px;color:#dddcd4;text-shadow:0 1px 8px #000}.actions{display:flex;flex-wrap:wrap;align-items:center;gap:20px;margin-top:28px}.button{display:inline-block;border:0;background:var(--orange);color:#17120d;text-decoration:none;padding:15px 24px;border-radius:5px;font-size:13px;font-weight:850;box-shadow:0 8px 35px #0003}.hint{font-size:12px;color:var(--muted)}.hero-bottom{margin-top:auto;display:flex;justify-content:space-between;gap:20px;padding:20px 0 28px;font-size:10px;letter-spacing:.15em;color:#bfc4c3}.hero-bottom span:last-child{color:var(--orange)}.welcome{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:65px;padding:65px 0}.welcome h2,.report h2{font:44px/1.1 Georgia,serif;letter-spacing:-.035em;margin:18px 0 22px}.welcome p{color:var(--muted);max-width:490px}.note{border-left:2px solid var(--orange);padding:5px 0 5px 18px;margin-top:28px}.note strong{font-size:10px;letter-spacing:.16em;color:var(--orange)}.note p{color:var(--text);font:italic 19px/1.5 Georgia,serif;margin:7px 0}.pit{margin:0;position:relative;text-align:center;background:radial-gradient(ellipse at 50% 65%,#dc8d3320,transparent 65%)}.pit img{width:100%;max-width:370px;height:360px;object-fit:contain;filter:drop-shadow(0 18px 14px #0009)}.pit figcaption{font-size:11px;letter-spacing:.15em;color:var(--muted);margin-top:10px}.pit figcaption strong{color:var(--orange)}.pit-credit{font-size:10px;text-decoration:none;color:#89908e;display:block;margin-top:8px}.house-rules{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--line);padding:25px 0;gap:28px}.house-rules strong{font-size:14px}.house-rules p{font-size:12px;color:var(--muted);margin:5px 0}.report{padding:65px 0 0}.report-top{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:28px}.report-top p{max-width:300px;color:var(--muted);font-size:13px}.form-shell{border:1px solid var(--line);border-radius:10px;background:#14120f;overflow:hidden}iframe{display:block;border:0;width:100%;height:2550px}.direct{display:block;text-align:center;margin:18px 0;color:var(--orange);font-size:12px}.waiting{padding:25px}footer{border-top:1px solid var(--line);margin-top:50px;padding:28px 0 35px;display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:11px}.footer-script{font:italic 21px Georgia,serif;color:var(--text)}[hidden]{display:none!important}:focus-visible{outline:3px solid var(--orange);outline-offset:5px}
+@media(max-width:700px){.wrap{width:calc(100% - 36px)}.hero{min-height:740px}.hero-photo{object-position:22% center}.hero:before{background:linear-gradient(180deg,#080c1070,#080c1038 45%,#101315 100%)}.hero-copy{padding:190px 0 35px}.hero-copy h1{font-size:68px}.hero-copy p{font-size:14px}.tagline{font-size:23px}.hero-bottom{font-size:8px;letter-spacing:.09em}.welcome{grid-template-columns:1fr;gap:25px;padding:45px 0}.welcome h2,.report h2{font-size:36px}.pit img{height:300px}.house-rules{grid-template-columns:1fr;gap:17px}.report-top{align-items:start;flex-direction:column;gap:0}.report{padding-top:45px}iframe{height:2900px}footer{flex-direction:column}.brand{font-size:10px;letter-spacing:.1em}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-</style>
-</head>
-<body>
-<header><div class="wrap"><nav aria-label="Main navigation">
-<a class="brand" href="./"><span class="seal" aria-hidden="true">★</span>BRISKET COMMAND</a>
-<span class="nav-note">ANTHONY'S BACKYARD BBQ</span>
-<a class="nav-link" href="#field-report">File a report ↗</a>
-</nav></div></header>
-<main class="wrap">
-<section class="hero">
-<div><div class="eyebrow">Low &amp; slow. High standards.</div>
-<h1>Silence.<br>And <em>chew.</em></h1>
-<p class="intro">Good smoke. A proper bark. One more bite.<br>Welcome to Brisket Command—where every cook gets better with your honest verdict.</p>
-<div class="actions"><a class="button" href="#field-report">FILE YOUR FIELD REPORT →</a><span class="subtle">No sign-in. Just taste buds.</span></div>
-</div>
-<figure class="equipment">
-<img id="smoker" src="https://lonestargrillz.com/cdn/shop/files/NCP_7942_1200x.png?v=1732042542" alt="Lone Star Grillz 20 by 42 inch pellet smoker" fetchpriority="high">
-<div id="photo-fallback" class="photo-fallback" hidden>Lone Star Grillz<br>20 × 42</div>
-<figcaption><div><small>LONE STAR GRILLZ</small><br><strong>20 × 42</strong></div><small>PELLET SMOKER</small></figcaption>
-<a class="credit" href="https://lonestargrillz.com/products/lone-star-grillz-20-x-42-pellet-smoker" target="_blank" rel="noopener">Product photography · Lone Star Grillz ↗</a>
-</figure>
-</section>
-<div class="ribbon"><span>SMOKE WITH PATIENCE</span><span>SEASON WITH PURPOSE</span><span>SERVE WITH PRIDE</span></div>
-<section class="process" aria-label="How to give feedback">
-<div class="step"><span class="number">01</span><h3>Taste it.</h3><p>Brisket, ribs, picanha—whatever landed on your plate.</p></div>
-<div class="step"><span class="number">02</span><h3>Call it.</h3><p>Tell us about the bark, smoke, tenderness, and that last bite.</p></div>
-<div class="step"><span class="number">03</span><h3>Make it better.</h3><p>Your verdict goes straight to the pitmaster for the next cook.</p></div>
-</section>
-<section id="field-report">
-<div class="report-heading"><div><div class="eyebrow">Straight from the tasting crew</div><h2>The field report.</h2></div><p>Honesty is the house rule. Tell Anthony what hit the mark—and what needs a little more fire.</p></div>
-<div class="form-shell"><p id="waiting" class="waiting">The reporting station is warming up. Check back soon.</p><iframe id="live" title="Brisket Command tasting report" hidden></iframe></div>
-<a id="open" class="direct" hidden>Prefer a separate page? Open the tasting form ↗</a>
-</section>
-<footer><span class="signature">A little smoke. A lot of soul.</span><span>ANTHONY'S BRISKET COMMAND · <a href="brisket-command-qr.svg">QR code</a></span></footer>
-</main>
-<script src="config.js"></script>
-<script>
+</style></head><body>
+<section class="hero"><img class="hero-photo" src="assets/anthony-night-rig.jpg" alt="Anthony's orange Peterbilt and pneumatic bulk trailer under a cloud-streaked moon" fetchpriority="high">
+<div class="wrap"><nav aria-label="Main navigation"><a href="./" class="brand"><span class="star" aria-hidden="true">★</span> BRISKET COMMAND</a><a href="#field-report" class="nav-link">Grab a plate. Leave a verdict. ↗</a></nav>
+<div class="hero-copy"><div class="eyebrow">Anthony's backyard • Mesa, Arizona</div><h1>BIG RIGS<br><span>&amp; BBQ.</span></h1><div class="tagline">Heavy hauls. Slow smoke.</div><p>From the driver's seat to the pit.<br>Good food, good company, and one more bite.</p><div class="actions"><a class="button" href="#field-report">TELL ME HOW I DID →</a><span class="hint">No sign-in. Just taste buds.</span></div></div></div>
+<div class="wrap hero-bottom"><span>LONG HAUL HEART. BACKYARD SOUL.</span><span>SILENCE AND CHEW.</span></div></section>
+<main class="wrap"><section class="welcome"><div><div class="eyebrow">Welcome to Brisket Command</div><h2>Pull up a chair.<br>I'll handle the smoke.</h2><p>I haul powder by day and chase better barbecue at home. This is my little corner of good smoke, full plates, and people worth feeding.</p><p>Grab a plate. Tell me straight. Your honest feedback helps make the next cook better.</p><aside class="note"><strong>ROWAN'S HOUSE RULE ❤️</strong><p>Be kind. Be honest. Save room for seconds.</p></aside></div>
+<figure class="pit"><img src="assets/lsg-pit.png" alt="Lone Star Grillz 20 by 42 pellet smoker" loading="lazy"><figcaption><strong>THE PIT</strong> · LONE STAR GRILLZ 20 × 42</figcaption><a class="pit-credit" href="https://lonestargrillz.com/products/lone-star-grillz-20-x-42-pellet-smoker" target="_blank" rel="noopener">Smoker photo courtesy of Lone Star Grillz ↗</a></figure></section>
+<section class="house-rules" aria-label="Tasting crew instructions"><div><strong>01 · Make yourself a plate.</strong><p>Brisket, ribs, picanha—follow your appetite.</p></div><div><strong>02 · Give me the honest version.</strong><p>The bark, the bite, the smoke. I want to hear it.</p></div><div><strong>03 · Come back hungry.</strong><p>Today's feedback is tomorrow's better barbecue.</p></div></section>
+<section id="field-report" class="report"><div class="report-top"><div><div class="eyebrow">You're part of the tasting crew</div><h2>How'd the pitmaster do?</h2></div><p>No fancy food critic vocabulary needed. Just tell me what you liked and what you'd change.</p></div><div class="form-shell"><p id="waiting" class="waiting">The reporting station is warming up.</p><iframe id="live" title="Brisket Command tasting report" hidden></iframe></div><a id="open" class="direct" hidden>Open the tasting form on its own ↗</a></section>
+<footer><span class="footer-script">Anthony on the pit. Rowan on the paperwork.</span><span>BRISKET COMMAND · <a href="brisket-command-qr.svg">Share the QR</a></span></footer></main>
+<script src="config.js"></script><script>
 const url=window.BRISKET_APP_URL;
-if(typeof url==='string' && /^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(url)){
- const frame=document.getElementById('live');frame.src=url;frame.hidden=false;
- document.getElementById('waiting').hidden=true;
- const link=document.getElementById('open');link.href=url;link.hidden=false;
-}
-const photo=document.getElementById('smoker');
-let triedOriginal=false;
-photo.addEventListener('error',()=>{
- if(!triedOriginal){triedOriginal=true;photo.src='https://lonestargrillz.com/cdn/shop/files/NCP_7942.png?v=1732042542&width=1200';}
- else{photo.hidden=true;document.getElementById('photo-fallback').hidden=false;}
-});
-</script>
-</body></html>
+if(typeof url==='string'&&/^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(url)){
+document.getElementById('live').src=url;document.getElementById('live').hidden=false;document.getElementById('waiting').hidden=true;const link=document.getElementById('open');link.href=url;link.hidden=false;}
+</script></body></html>
