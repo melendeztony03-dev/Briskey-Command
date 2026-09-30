@@ -1,1 +1,90 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Anthony’s Brisket Command: honest BBQ feedback, one field report at a time."><title>Brisket Command — Field Test Report</title><style>:root{color-scheme:dark;--bg:#14120f;--card:#211d17;--gold:#ecb66b;--text:#f4ede2}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 system-ui,sans-serif}main{max-width:760px;margin:auto;padding:32px 20px 60px}.eyebrow{color:var(--gold);letter-spacing:.22em;font-size:12px;font-weight:800}h1{font-size:clamp(38px,8vw,68px);line-height:1.04;margin:18px 0}h2{font-size:24px}p{color:#c7bdb0}.card{background:var(--card);border:1px solid #42372b;border-radius:18px;padding:24px;margin:24px 0}label{display:block;font-weight:600;margin:18px 0 8px}input,select,textarea,button{font:inherit;width:100%;border-radius:9px;padding:12px;border:1px solid #62513c;background:#16130f;color:var(--text)}button,.button{background:var(--gold);color:#21180c;font-weight:800;border:0;padding:15px 20px;cursor:pointer;display:inline-block;border-radius:9px;text-decoration:none}button:disabled{opacity:.5;cursor:wait}.hint{font-size:14px;color:#b9ad9b}fieldset{border:0;margin:20px 0;padding:0}legend{font-weight:700}.rating{display:flex;gap:8px;flex-wrap:wrap}.rating label{margin:6px 0;flex:1;min-width:45px}.rating input{width:auto;accent-color:var(--gold)}.rating label{background:#16130f;padding:10px;border-radius:8px;text-align:center}a{color:var(--gold)}:focus-visible{outline:3px solid var(--gold);outline-offset:3px}.trap{display:none}#status{white-space:pre-line}.footer{font-size:13px;text-align:center;color:#9b8d7c}iframe{border:0;width:100%;height:2200px}#live{display:none}</style></head><body><main id="welcome"><div class="eyebrow">ANTHONY'S BACKYARD · BRISKET COMMAND</div><h1>Smoke.<br>Taste.<br>Report.</h1><p>Great barbecue gets better with honest feedback. Bark, smoke, tenderness, and that last bite—tell the pitmaster how the mission went.</p><section class="card"><h2>Field Test Report</h2><p id="message">The pitmaster is preparing the reporting station. Check back soon for the tasting form.</p><a id="open" class="button" hidden>Open tasting form →</a></section><p class="footer">Silence and chew. 🥩🔥</p></main><iframe id="live" title="Brisket Command tasting form"></iframe><script src="config.js"></script><script>const url=window.BRISKET_APP_URL;if(typeof url==='string' && /^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(url)){document.getElementById('message').textContent='No sign-in needed. Your honest verdict goes straight to Anthony.';const link=document.getElementById('open');link.href=url;link.hidden=false;const frame=document.getElementById('live');frame.src=url;frame.style.display='block';}</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#151411">
+<meta name="description" content="Anthony's Brisket Command. Low and slow barbecue. Honest field reports.">
+<title>Brisket Command | Smoke. Taste. Report.</title>
+<link rel="preconnect" href="https://lonestargrillz.com">
+<style>
+:root{color-scheme:dark;--ink:#151411;--cream:#f4ecd9;--muted:#b6ae9f;--copper:#e7a65f;--line:#3b352b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--cream);background:var(--ink);font:16px/1.6 system-ui,sans-serif}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 85% 12%,#a553181c,transparent 55%);z-index:-1}
+a{color:inherit}.wrap{max-width:1180px;margin:auto;padding:0 28px}
+header{border-bottom:1px solid var(--line)}nav{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:23px 0}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none;font-size:14px;letter-spacing:.12em;font-weight:900}
+.seal{display:grid;place-items:center;width:45px;height:45px;border:1px solid var(--copper);color:var(--copper);border-radius:50%;font:24px Georgia,serif}
+.nav-note{font-size:11px;letter-spacing:.15em;color:var(--muted)}.nav-link{font-size:13px;color:var(--copper);text-decoration:none;font-weight:700}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:80px 0 65px}
+.eyebrow{display:flex;align-items:center;gap:12px;color:var(--copper);font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
+.eyebrow:before{content:"";width:32px;height:1px;background:var(--copper)}
+h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(62px,7.5vw,104px);letter-spacing:-.055em;line-height:.98;margin:29px 0}
+h1 em{color:var(--copper);font-weight:400}p{color:var(--muted)}.intro{max-width:410px;font-size:17px;line-height:1.8}
+.actions{display:flex;gap:18px;align-items:center;margin:30px 0;flex-wrap:wrap}.button{display:inline-block;text-decoration:none;border:1px solid var(--copper);background:var(--copper);color:#20170e;padding:15px 23px;font-size:13px;font-weight:850;letter-spacing:.03em;border-radius:3px}
+.subtle{font-size:12px;color:var(--muted)}.equipment{position:relative;margin:0;background:#eee9de;border-radius:4px;color:#24221d;padding:35px 22px 22px;box-shadow:20px 20px 0 #241f18}
+.equipment:before{content:"THE PIT";position:absolute;top:18px;left:22px;font-size:10px;letter-spacing:.2em;color:#65594a}
+.equipment img{display:block;width:100%;height:320px;object-fit:contain}
+.equipment figcaption{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-top:18px;padding-top:16px;border-top:1px solid #d2c7b6}
+.equipment strong{font:26px Georgia,serif}.equipment small{font-size:10px;letter-spacing:.12em}.credit{font-size:10px;display:block;color:#746854;margin-top:10px}
+.photo-fallback{padding:60px 20px;text-align:center;font:32px Georgia,serif}
+.ribbon{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:19px 0;color:#c4b49b;font-size:10px;letter-spacing:.18em;font-weight:700}
+.process{display:grid;grid-template-columns:repeat(3,1fr);gap:35px;padding:45px 0 65px}.step{border-left:1px solid var(--line);padding-left:20px}.number{font:italic 23px Georgia,serif;color:var(--copper)}.step h3{font:24px Georgia,serif;margin:10px 0}.step p{font-size:13px;margin:0;max-width:260px}
+.report-heading{display:flex;justify-content:space-between;align-items:end;gap:24px;border-top:1px solid var(--line);padding-top:40px;margin-bottom:28px}.report-heading h2{font:clamp(32px,5vw,48px) Georgia,serif;margin:14px 0 0;letter-spacing:-.03em}.report-heading p{font-size:13px;max-width:300px;margin:0}
+.form-shell{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#14120f}
+iframe{display:block;width:100%;height:2550px;border:0}#live[hidden]{display:none}.waiting{padding:32px;color:var(--muted)}.direct{display:block;text-align:center;font-size:12px;margin:20px 0;color:var(--copper)}
+footer{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:30px 0 40px;border-top:1px solid var(--line);margin-top:45px;color:var(--muted);font-size:11px}.signature{font:italic 22px Georgia,serif;color:var(--cream)}
+[hidden]{display:none!important}:focus-visible{outline:3px solid var(--copper);outline-offset:5px}
+@media(max-width:760px){.wrap{padding:0 20px}.nav-note{display:none}.hero{grid-template-columns:1fr;gap:36px;padding:45px 0}.hero h1{font-size:76px}.equipment{margin-right:12px;box-shadow:12px 12px 0 #241f18}.equipment img{height:270px}.ribbon{flex-wrap:wrap;justify-content:center;font-size:9px}.process{gap:20px;padding:36px 0 45px}.step{padding-left:12px}.step h3{font-size:21px}.report-heading{align-items:start;flex-direction:column;gap:14px}iframe{height:2900px}footer{align-items:start;flex-direction:column}.brand{font-size:11px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav aria-label="Main navigation">
+<a class="brand" href="./"><span class="seal" aria-hidden="true">★</span>BRISKET COMMAND</a>
+<span class="nav-note">ANTHONY'S BACKYARD BBQ</span>
+<a class="nav-link" href="#field-report">File a report ↗</a>
+</nav></div></header>
+<main class="wrap">
+<section class="hero">
+<div><div class="eyebrow">Low &amp; slow. High standards.</div>
+<h1>Silence.<br>And <em>chew.</em></h1>
+<p class="intro">Good smoke. A proper bark. One more bite.<br>Welcome to Brisket Command—where every cook gets better with your honest verdict.</p>
+<div class="actions"><a class="button" href="#field-report">FILE YOUR FIELD REPORT →</a><span class="subtle">No sign-in. Just taste buds.</span></div>
+</div>
+<figure class="equipment">
+<img id="smoker" src="https://lonestargrillz.com/cdn/shop/files/NCP_7942_1200x.png?v=1732042542" alt="Lone Star Grillz 20 by 42 inch pellet smoker" fetchpriority="high">
+<div id="photo-fallback" class="photo-fallback" hidden>Lone Star Grillz<br>20 × 42</div>
+<figcaption><div><small>LONE STAR GRILLZ</small><br><strong>20 × 42</strong></div><small>PELLET SMOKER</small></figcaption>
+<a class="credit" href="https://lonestargrillz.com/products/lone-star-grillz-20-x-42-pellet-smoker" target="_blank" rel="noopener">Product photography · Lone Star Grillz ↗</a>
+</figure>
+</section>
+<div class="ribbon"><span>SMOKE WITH PATIENCE</span><span>SEASON WITH PURPOSE</span><span>SERVE WITH PRIDE</span></div>
+<section class="process" aria-label="How to give feedback">
+<div class="step"><span class="number">01</span><h3>Taste it.</h3><p>Brisket, ribs, picanha—whatever landed on your plate.</p></div>
+<div class="step"><span class="number">02</span><h3>Call it.</h3><p>Tell us about the bark, smoke, tenderness, and that last bite.</p></div>
+<div class="step"><span class="number">03</span><h3>Make it better.</h3><p>Your verdict goes straight to the pitmaster for the next cook.</p></div>
+</section>
+<section id="field-report">
+<div class="report-heading"><div><div class="eyebrow">Straight from the tasting crew</div><h2>The field report.</h2></div><p>Honesty is the house rule. Tell Anthony what hit the mark—and what needs a little more fire.</p></div>
+<div class="form-shell"><p id="waiting" class="waiting">The reporting station is warming up. Check back soon.</p><iframe id="live" title="Brisket Command tasting report" hidden></iframe></div>
+<a id="open" class="direct" hidden>Prefer a separate page? Open the tasting form ↗</a>
+</section>
+<footer><span class="signature">A little smoke. A lot of soul.</span><span>ANTHONY'S BRISKET COMMAND · <a href="brisket-command-qr.svg">QR code</a></span></footer>
+</main>
+<script src="config.js"></script>
+<script>
+const url=window.BRISKET_APP_URL;
+if(typeof url==='string' && /^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(url)){
+ const frame=document.getElementById('live');frame.src=url;frame.hidden=false;
+ document.getElementById('waiting').hidden=true;
+ const link=document.getElementById('open');link.href=url;link.hidden=false;
+}
+const photo=document.getElementById('smoker');
+let triedOriginal=false;
+photo.addEventListener('error',()=>{
+ if(!triedOriginal){triedOriginal=true;photo.src='https://lonestargrillz.com/cdn/shop/files/NCP_7942.png?v=1732042542&width=1200';}
+ else{photo.hidden=true;document.getElementById('photo-fallback').hidden=false;}
+});
+</script>
+</body></html>
