@@ -8,7 +8,7 @@
 <div id="foods"></div><button id="add" type="button" class="secondary">＋ I tasted something else</button>
 <section class="card"><h2>The whole-plate verdict</h2><label for="favorite">Which food was your favorite? · optional</label><select id="favorite" name="favorite"><option value="">Choose after adding your foods</option></select><label for="notes">Anything else for Anthony? · optional</label><textarea id="notes" name="notes" rows="3" maxlength="1700"></textarea><p class="small">Your reviews go privately to Anthony's response sheet and inbox. No email address or sign-in needed.</p><button id="send" type="submit">Send all my reviews →</button><p id="status" role="status" aria-live="polite"></p></section></form><p class="small">Anthony on the pit. Rowan on the paperwork. 🥩🔥</p>
 </main><script>
-const meats=['Brisket','Pork shoulder','Ribs','Picanha','Meatloaf','Texas Twinkies','Armadillo Eggs','Other'];
+const meats=['Brisket','Pork shoulder','Pork Ribs','Dino Ribs','Picanha','Meatloaf','Texas Twinkies','Armadillo Eggs','Other'];
 const qualities=[['bark','Bark / outside texture'],['smoke','Smoke flavor'],['salt','Salt'],['pepper','Pepper'],['tenderness','Tenderness'],['fat','Fat render'],['moisture','Moisture / juiciness']];
 const report=document.getElementById('report'),foods=document.getElementById('foods'),add=document.getElementById('add'),send=document.getElementById('send'),status=document.getElementById('status'),favorite=document.getElementById('favorite');
 let serial=0,reportId=crypto.randomUUID(),pending=false,pendingPayload=null;
@@ -35,7 +35,7 @@ function addFood(focusNew=true){
  const select=d.querySelector('[data-key="meat"]');
  select.addEventListener('change',()=>{
   d.querySelector('summary').textContent=select.value||'Food review';
-  d.querySelectorAll('[data-special]').forEach(el=>{el.hidden=el.dataset.special!==select.value;el.querySelectorAll('select').forEach(s=>{s.disabled=el.hidden;if(el.hidden)s.value='';});});
+  d.querySelectorAll('[data-special]').forEach(el=>{el.hidden=el.dataset.special==='Ribs'?!['Pork Ribs','Dino Ribs'].includes(select.value):el.dataset.special!==select.value;el.querySelectorAll('select').forEach(s=>{s.disabled=el.hidden;if(el.hidden)s.value='';});});
   const snack=['Texas Twinkies','Armadillo Eggs'].includes(select.value),fat=d.querySelector('[data-quality="fat"]');
   fat.hidden=snack;fat.querySelectorAll('input').forEach(i=>{i.disabled=snack;if(snack)i.checked=false;});
   updateFavorites();
