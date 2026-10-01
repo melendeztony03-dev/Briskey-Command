@@ -24,7 +24,7 @@ function submitReport(p){
   if(!item || !meats.includes(item.meat) || !['Yes','Maybe','No'].includes(item.again))throw new Error('Choose a food and verdict for every review.');
   keys.forEach(k=>{if(item[k]!==undefined && item[k]!=='' && !/^[1-5]$/.test(String(item[k])))throw new Error('Invalid rating.');});
  });
- if(p.favorite && p.favorite!=='No favorite' && !items.some(i=>i.meat===p.favorite))throw new Error('Choose a favorite from the foods you reviewed.');
+ if(p.favorite && !['No favorite','ALL OF IT DAMN IT!'].includes(p.favorite) && !items.some(i=>i.meat===p.favorite))throw new Error('Choose a favorite from the foods you reviewed.');
  const note=[p.favorite?'Favorite on the plate: '+p.favorite:'',p.notes||''].filter(Boolean).join('\n');
  const lock=LockService.getScriptLock();lock.waitLock(10000);
  try{
