@@ -18,7 +18,7 @@ function submitReport(p){
  if(!p || p.website || !/^[a-zA-Z0-9-]{16,80}$/.test(p.id||''))throw new Error('Invalid report.');
  const items=Array.isArray(p.items)?p.items:[p];
  if(!items.length || items.length>10)throw new Error('Review between one and ten foods.');
- const meats=['Brisket','Pork shoulder','Ribs','Picanha','Meatloaf','Texas Twinkies','Armadillo Eggs','Other'];
+ const meats=['Brisket','Pork shoulder','Pork Ribs','Dino Ribs','Picanha','Meatloaf','Texas Twinkies','Armadillo Eggs','Other'];
  const keys=['bark','smoke','salt','pepper','tenderness','fat','moisture'];
  items.forEach(item=>{
   if(!item || !meats.includes(item.meat) || !['Yes','Maybe','No'].includes(item.again))throw new Error('Choose a food and verdict for every review.');
@@ -35,7 +35,7 @@ function submitReport(p){
    received,p.id,clean(p.name,80),clean(p.batch,100),item.meat,
    ...keys.map(k=>item[k]?Number(item[k]):''),
    item.meat==='Brisket'?clean(item.section,40):'',
-   item.meat==='Ribs'?clean(item.ribs,40):'',
+   ['Pork Ribs','Dino Ribs'].includes(item.meat)?clean(item.ribs,40):'',
    item.again,clean(item.change,1000),clean(note,2000)
   ]);
   const last=sh.getLastRow(),needed=last+rows.length-sh.getMaxRows();
