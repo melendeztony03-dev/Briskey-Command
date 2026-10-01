@@ -18,7 +18,7 @@ function submitReport(p){
  if(!p || p.website || !/^[a-zA-Z0-9-]{16,80}$/.test(p.id||''))throw new Error('Invalid report.');
  const items=Array.isArray(p.items)?p.items:[p];
  if(!items.length || items.length>10)throw new Error('Review between one and ten foods.');
- const meats=['Brisket','Pulled Pork','Pork Ribs','Dino Ribs','Picanha','Meatloaf','Texas Twinkies','Armadillo Eggs','Mac N Cheese','Other'];
+ const meats=['Brisket','Pulled Pork','Pork Ribs','Dino Ribs','Picanha','Meatloaf','Texas Twinkies','Armadillo Eggs','Mac N Cheese','Chicken','Turkey','Cream Cheese','Other'];
  const keys=['bark','smoke','salt','pepper','tenderness','fat','moisture'];
  items.forEach(item=>{
   if(!item || !meats.includes(item.meat) || !['Yes','Maybe','No'].includes(item.again))throw new Error('Choose a food and verdict for every review.');
@@ -33,7 +33,11 @@ function submitReport(p){
   const received=new Date();
   const rows=items.map(item=>[
    received,p.id,clean(p.name,80),clean(p.batch,100),item.meat,
-   ...keys.map(k=>item[k]?Number(item[k]):''),
+   ...keys.map(k=>{
+    const dairy=['Mac N Cheese','Cream Cheese'].includes(item.meat);
+    const noFat=dairy||['Chicken','Turkey','Texas Twinkies','Armadillo Eggs'].includes(item.meat);
+    return (k==='bark'&&dairy)||(k==='fat'&&noFat)?'':(item[k]?Number(item[k]):'');
+   }),
    item.meat==='Brisket'?clean(item.section,40):'',
    ['Pork Ribs','Dino Ribs'].includes(item.meat)?clean(item.ribs,40):'',
    item.again,clean(item.change,1000),clean(note,2000)
@@ -44,13 +48,22 @@ function submitReport(p){
   return {ok:true,count:rows.length};
  }finally{lock.releaseLock();}
 }
+function ratingLabel(meat,index) {
+ const dairy=['Mac N Cheese','Cream Cheese'].includes(meat),poultry=['Chicken','Turkey'].includes(meat);
+ if(index===5&&poultry)return 'Skin texture (if tasted)';
+ if(index===9&&meat==='Mac N Cheese')return 'Pasta texture';
+ if(index===9&&meat==='Cream Cheese')return 'Cream cheese texture';
+ if(index===11&&dairy)return 'Creaminess';
+ if(index===11&&poultry)return 'Juiciness';
+ return HEADERS[index];
+}
 function sendNotifications(){
  const lock=LockService.getScriptLock();if(!lock.tryLock(1000))return;
  try{
   const sh=sheet(),props=PropertiesService.getScriptProperties(),last=Number(props.getProperty('notifiedThrough')||1),end=sh.getLastRow();
   if(end<=last || MailApp.getRemainingDailyQuota()<1)return;
   const rows=sh.getRange(last+1,1,end-last,HEADERS.length).getDisplayValues();
-  const body=rows.map(row=>HEADERS.map((h,i)=>h+': '+row[i]).join('\n')).join('\n\n');
+  const body=rows.map(row=>HEADERS.map((h,i)=>ratingLabel(row[4],i)+': '+row[i]).join('\n')).join('\n\n');
   MailApp.sendEmail(props.getProperty('NOTIFY_EMAIL'),'Brisket Command: '+new Set(rows.map(r=>r[1])).size+' new report(s), '+rows.length+' food review(s)',body);
   props.setProperty('notifiedThrough',String(end));
  }finally{lock.releaseLock();}
