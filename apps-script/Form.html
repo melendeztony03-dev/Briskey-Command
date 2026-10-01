@@ -15,7 +15,7 @@ let serial=0,reportId=crypto.randomUUID(),pending=false,pendingPayload=null;
 function updateFavorites(){
  const old=favorite.value;
  const selected=[...new Set([...foods.querySelectorAll('[data-key="meat"]')].map(s=>s.value).filter(Boolean))];
- favorite.replaceChildren(new Option('No selection',''),...selected.map(m=>new Option(m,m)),new Option('No favorite','No favorite'));
+ favorite.replaceChildren(new Option('No selection',''),...selected.map(m=>new Option(m,m)),new Option('ALL OF IT DAMN IT!','ALL OF IT DAMN IT!'),new Option('No favorite','No favorite'));
  if([...favorite.options].some(o=>o.value===old))favorite.value=old;
  add.disabled=pending||foods.children.length>=10;
  foods.querySelectorAll('.remove').forEach(b=>b.hidden=foods.children.length===1);
