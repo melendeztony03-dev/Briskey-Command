@@ -18,7 +18,7 @@ function submitReport(p){
  if(!p || p.website || !/^[a-zA-Z0-9-]{16,80}$/.test(p.id||''))throw new Error('Invalid report.');
  const items=Array.isArray(p.items)?p.items:[p];
  if(!items.length || items.length>10)throw new Error('Review between one and ten foods.');
- const meats=['Brisket','Pork shoulder','Pork Ribs','Dino Ribs','Picanha','Meatloaf','Texas Twinkies','Armadillo Eggs','Mac N Cheese','Other'];
+ const meats=['Brisket','Pulled Pork','Pork Ribs','Dino Ribs','Picanha','Meatloaf','Texas Twinkies','Armadillo Eggs','Mac N Cheese','Other'];
  const keys=['bark','smoke','salt','pepper','tenderness','fat','moisture'];
  items.forEach(item=>{
   if(!item || !meats.includes(item.meat) || !['Yes','Maybe','No'].includes(item.again))throw new Error('Choose a food and verdict for every review.');
