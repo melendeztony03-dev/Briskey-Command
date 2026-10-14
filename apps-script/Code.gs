@@ -17,8 +17,8 @@ function clean(v,n){const s=String(v||'').trim().slice(0,n);return /^[=+@-]/.tes
 function submitReport(p){
  if(!p || p.website || !/^[a-zA-Z0-9-]{16,80}$/.test(p.id||''))throw new Error('Invalid report.');
  const items=Array.isArray(p.items)?p.items:[p];
- if(!items.length || items.length>10)throw new Error('Review between one and ten foods.');
- const meats=['Brisket','Pulled Pork','Pork Ribs','Dino Ribs','Picanha','Meatloaf','Texas Twinkies','Armadillo Eggs','Mac N Cheese','Chicken','Turkey','Cream Cheese','Other'];
+ if(!items.length || items.length>20)throw new Error('Review between one and twenty foods.');
+ const meats=['Brisket','Pulled Pork','Pork Ribs','Dino Ribs','Picanha','Meatloaf','Texas Twinkies','Armadillo Eggs','Mac N Cheese','Chicken','Turkey','Cream Cheese','Sausage','Potato Salad','Other'];
  const keys=['bark','smoke','salt','pepper','tenderness','fat','moisture'];
  items.forEach(item=>{
   if(!item || !meats.includes(item.meat) || !['Yes','Maybe','No'].includes(item.again))throw new Error('Choose a food and verdict for every review.');
@@ -67,4 +67,16 @@ function sendNotifications(){
   MailApp.sendEmail(props.getProperty('NOTIFY_EMAIL'),'Brisket Command: '+new Set(rows.map(r=>r[1])).size+' new report(s), '+rows.length+' food review(s)',body);
   props.setProperty('notifiedThrough',String(end));
  }finally{lock.releaseLock();}
+}
+
+/** Brisket HQ extension: preserves the existing form, response sheet, IDs, and notification trigger. */
+function doPost(e) {
+ try {
+  if(!e || !e.postData || typeof e.postData.contents!=='string' || e.postData.contents.length>30000)throw new Error('Invalid report.');
+  const payload=JSON.parse(e.postData.contents);
+  const result=submitReport(payload);
+  return ContentService.createTextOutput(JSON.stringify(result)).setMimeType(ContentService.MimeType.JSON);
+ }catch(error){
+  return ContentService.createTextOutput(JSON.stringify({ok:false,error:'Report was not accepted.'})).setMimeType(ContentService.MimeType.JSON);
+ }
 }
